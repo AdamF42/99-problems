@@ -7,5 +7,7 @@ public class P02Test {
         //List<Integer> elements = List.of(1, 2, 4);
         List<String> elements = List.of("a", "b", "c", "d");
         System.out.println(P02.secondLast(elements));
+        System.out.println(P02.secondLast(List.of()));
+        System.out.println(P02.secondLast(null));
     }
 }
