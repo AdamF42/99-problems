@@ -1,7 +1,6 @@
 import io.vavr.collection.List;
 import io.vavr.control.Option;
 
-
 import java.util.Objects;
 
 import static io.vavr.API.*;
@@ -13,7 +12,7 @@ import static io.vavr.Patterns.$Nil;
  */
 public class P03 {
 
-    public static  <T> Option<T> kth(List<T> elements, Integer index) {
+    public static <T> Option<T> kth(List<T> elements, Integer index) {
         return Match(elements).of(
                 Case($(Objects::isNull), a -> None()),
                 Case($Nil(), a -> None()),
