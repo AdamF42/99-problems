@@ -1,5 +1,4 @@
 import io.vavr.collection.List;
-import io.vavr.control.Option;
 
 import java.util.Objects;
 
@@ -12,9 +11,9 @@ import static io.vavr.Patterns.$Nil;
  */
 public class P05 {
 
-    private static  <T> List<T> reverse(List<T> elements, List<T> accumulator) {
+    private static <T> List<T> reverse(List<T> elements, List<T> accumulator) {
         return Match(elements).of(
-                Case($(Objects::isNull), a -> List.of()),
+                Case($(Objects::isNull), a -> null),
                 Case($Nil(), a -> accumulator),
                 Case($Cons($(), $()), (a, tail) -> reverse(tail, accumulator.push(a)))
         );
